@@ -1,6 +1,9 @@
 import './Navbar.css'
+import { useState } from "react";
+
 
 function Navbar(){
+    const [menuOpen, setMenuOpen] = useState(false);
     return (
         <>
         <div className='navbar'>
@@ -9,13 +12,17 @@ function Navbar(){
                     SPANDHAN
                 </h4>
             </div>
-         <ul className="nav-links">
-            <li>Home</li>
-            <li>About</li>
-            <li>Milestone</li>
-            <li>Testimonial</li>
-            <li>Team</li>
-            <li>Volunteer</li>
+
+           <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+        ☰
+      </div>   
+         <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
+            <li><a href="#">Home</a></li>
+  <li><a href="#">About</a></li>
+  <li><a href="#">Milestone</a></li>
+  <li><a href="#">Testimonial</a></li>
+  <li><a href="#">Team</a></li>
+  <li><a href="#">Volunteer</a></li>
          </ul>   
         </div>
         </>
