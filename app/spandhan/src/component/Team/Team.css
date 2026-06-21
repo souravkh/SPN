@@ -1,0 +1,113 @@
+/* Team.css */
+.team {
+  padding: 100px 0;
+  background-color: #FFFFFF;
+  overflow: hidden;
+}
+
+.team-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding: 0 100px;
+}
+
+.team-chip {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #0D9488;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.team-header h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 1rem;
+}
+
+.team-header p {
+  color: #6B7280;
+  font-size: 1.125rem;
+}
+
+.team-marquee-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  background-color: #FFFFFF;
+  padding: 60px 0;
+}
+
+.team-marquee-container::before,
+.team-marquee-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 15%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.team-marquee-container::before {
+  left: 0;
+  background: linear-gradient(to right, #FFFFFF 0%, transparent 100%);
+}
+
+.team-marquee-container::after {
+  right: 0;
+  background: linear-gradient(to left, #FFFFFF 0%, transparent 100%);
+}
+
+.team-marquee {
+  display: flex;
+  gap: 30px;
+  width: max-content;
+  /* Moving Left to Right */
+  animation: scrollRight 20s linear infinite;
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.team-image {
+  height: 350px;
+  width: 500px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+@media (max-width: 1024px) {
+  .team-header {
+    padding: 0 40px;
+  }
+  .team-image {
+    height: 250px;
+    width: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .team {
+    padding: 60px 0;
+  }
+  .team-header {
+    padding: 0 20px;
+  }
+  .team-image {
+    height: 200px;
+    width: 280px;
+  }
+}

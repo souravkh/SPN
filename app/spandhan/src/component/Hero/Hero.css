@@ -1,140 +1,159 @@
-/* =========================
-   HERO SECTION (DESKTOP)
-========================= */
-
 .hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 80px 100px 140px 100px;
+  background: linear-gradient(135deg, #E0F2FE 0%, #CCFBF1 50%, #FEF3C7 100%);
+  color: #111827;
+  min-height: 85vh;
+  gap: 60px;
+  position: relative;
+}
 
-  padding: 80px 100px;
-  background-color: #1F6F50;
-  color: white;
+.hero-wave {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
 
-  min-height: 90vh;
-  gap: 40px;
+.hero-wave svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 80px;
 }
 
 .hero-text {
   width: 50%;
 }
 
-.tagline {
-  font-size: 14px;
-  opacity: 0.8;
-  letter-spacing: 1px;
+.hero-chip {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #0D9488;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
 }
 
 .hero-text h1 {
-  font-size: 3.5rem;
+  font-size: 4rem;
   font-family: "Manrope", sans-serif;
-  margin: 20px 0;
-  line-height: 1.2;
+  margin: 0 0 1.5rem;
+  line-height: 1.1;
+  font-weight: 800;
+  color: #111827;
+}
+
+.hero-highlight {
+  color: #0D9488;
+}
+
+.hero-hindi {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #4B5563;
+  margin-bottom: 1.5rem;
+  font-family: "Manrope", sans-serif;
 }
 
 .description {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  opacity: 0.9;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #6B7280;
+  max-width: 540px;
 }
 
 .buttons {
-  margin-top: 30px;
+  margin-top: 2.5rem;
   display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .btn {
-  padding: 12px 20px;
-  border: none;
-  cursor: pointer;
-
+  padding: 0.875rem 2rem;
   font-size: 1rem;
-  border-radius: 6px;
-
-  transition: 0.3s ease;
-}
-
-/* Buttons hover */
-.btn:hover {
-  transform: translateY(-2px);
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
 }
 
 .primary {
-  background: #ffffff;
-  color: #1F6F50;
+  background-color: #0D9488;
+  color: #FFFFFF;
+}
+
+.primary:hover {
+  background-color: #0F766E;
 }
 
 .secondary {
-  background: transparent;
-  border: 2px solid white;
-  color: white;
+  background-color: transparent;
+  color: #111827;
+  border: 1px solid #E5E7EB;
+}
+
+.secondary:hover {
+  border-color: #D1D5DB;
+  background-color: #F9FAFB;
 }
 
 .hero-image {
-  width: 45%;
+  width: 50%;
 }
 
-.hero-image img {
+.hero-image-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-image-wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: -24px;
+  right: -24px;
+  width: 60%;
+  height: 60%;
+  background-color: #CCFBF1;
+  border-radius: 8px;
+  z-index: -1;
+}
+
+.hero-image-wrapper img {
   width: 100%;
-  border-radius: 12px;
+  border-radius: 8px;
   object-fit: cover;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  aspect-ratio: 4/3;
 }
-
-
-/* =========================
-   TABLET
-========================= */
 
 @media (max-width: 1024px) {
-
   .hero {
-    padding: 60px;
+    padding: 60px 40px;
   }
-
   .hero-text h1 {
-    font-size: 2.8rem;
+    font-size: 3rem;
   }
 }
 
-
-/* =========================
-   MOBILE
-========================= */
-
 @media (max-width: 768px) {
-
   .hero {
     flex-direction: column;
+    padding: 40px 20px;
     text-align: center;
-
-    padding: 50px 20px;
   }
-
-  .hero-text {
+  .hero-text, .hero-image {
     width: 100%;
   }
-
-  .hero-text h1 {
-    font-size: 2.2rem;
-  }
-
   .description {
-    font-size: 1rem;
+    margin: 0 auto;
   }
-
   .buttons {
     justify-content: center;
-  }
-
-  .hero-image {
-    width: 100%;
-    margin-top: 30px;
-  }
-
-  .hero-image img {
-    max-height: 300px;
   }
 }

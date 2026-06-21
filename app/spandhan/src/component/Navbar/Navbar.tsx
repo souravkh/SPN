@@ -1,31 +1,32 @@
 import './Navbar.css'
 import { useState } from "react";
 
-
 function Navbar(){
-    const [menuOpen, setMenuOpen] = useState<Boolean>(false);
+    const [menuOpen, setMenuOpen] = useState<boolean>(false);
+
+    const handleLinkClick = () => {
+        setMenuOpen(false);
+    };
+
     return (
-        <>
-        <div className='navbar'>
+        <div className="navbar">
             <div className='logo'>
-                <h4>
-                    SPANDAN
-                </h4>
+                <h4>SPANDAN</h4>
             </div>
 
            <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
-            ☰
-            </div>   
+            {menuOpen ? "✕" : "☰"}
+            </div>
             <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Milestone</a></li>
-                <li><a href="#">Testimonial</a></li>
-                <li><a href="#">Team</a></li>
-                <li><a href="#">Volunteer</a></li>
-            </ul>   
+                <li><a href="#home" onClick={handleLinkClick}>Home</a></li>
+                <li><a href="#about" onClick={handleLinkClick}>About</a></li>
+                <li><a href="#projects" onClick={handleLinkClick}>Projects</a></li>
+                <li><a href="#milestone" onClick={handleLinkClick}>Milestone</a></li>
+                <li><a href="#testimonial" onClick={handleLinkClick}>Testimonial</a></li>
+                <li><a href="#team" onClick={handleLinkClick}>Team</a></li>
+                <li><a href="mailto:contact@spandhan.org?subject=I%20want%20to%20volunteer" className="nav-cta" onClick={handleLinkClick}>Volunteer</a></li>
+            </ul>
         </div>
-        </>
     )
 }
 

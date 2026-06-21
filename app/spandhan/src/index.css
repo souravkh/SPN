@@ -1,7 +1,9 @@
 body {
-  background-color: #FAF9F6;
+  background-color: #FFFFFF;
   font-family: "Inter", sans-serif;
-  color: #1F2937;
+  color: #4B5563;
+  margin: 0;
+  padding: 0;
 }
 
 h1,
@@ -11,4 +13,9 @@ h4,
 h5,
 h6 {
   font-family: "Manrope", sans-serif;
+  color: #111827;
+}
+
+* {
+  box-sizing: border-box;
 }
